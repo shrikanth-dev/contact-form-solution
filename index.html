@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Frontend Mentor | Contact form</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+      input:invalid::after,
+      textarea:invalid::after {
+        content: attr(data-error);
+      }
+    </style>
+  </head>
+  <body>
+    <form id="contactForm" class="contactForm" action="/" method="post">
+      <h2>Contact Us</h2>
+      <div class="nameFieldContainer">
+        <div class="nameField">
+          <label for="firstName">First Name <span class="star"> * </span></label> <br />
+          <input
+            type="text"
+            name="firstName"
+            id="firstName"
+            class="inputField"
+          />
+          <span class="error" id="firstNameError"></span>
+        </div>
+
+        <div class="lastName nameField">
+          <label for="lastName">Last Name <span class="star"> * </span></label><br />
+          <input type="text" name="lastName" id="lastName" class="inputField" />
+          <span class="error" id="lastNameError"></span>
+        </div>
+      </div>
+
+      <div>
+        <label for="email">Email Address <span class="star"> * </span></label> <br />
+        <input type="email" name="email" id="email" class="inputField" />
+        <span class="error" id="emailError"></span>
+      </div>
+
+      <div>
+        <label >Query Type <span class="star"> * </span></label> <br />
+        <div class="radio-group">
+          <div class="radioButtonContainer">
+            <input
+              type="radio"
+              name="Query"
+              id="GeneralEnquiry"
+              value="GeneralEnquiry"
+            />
+            <label for="GeneralEnquiry">General Enquiry</label>
+
+            <input
+              type="radio"
+              name="Query"
+              id="SupportRequest"
+              value="SupportRequest"
+            />
+            <label for="SupportRequest">Support Request</label>
+          </div>
+          <span class="error" id="queryError"></span>
+        </div>
+      </div>
+
+      <div>
+        <label for="Message">Message <span class="star"> * </span> </label> <br />
+        <textarea
+          name="Message"
+          id="Message"
+          rows="5"
+          class="inputField"
+        ></textarea>
+        <span class="error" id="messageError"></span>
+      </div>
+
+      <div class="checkBox-container">
+        <input type="checkbox" name="checkBox" id="checkBox" class="checkBox" />
+        <label for="checkBox" class="checkBox"
+          >I hereby consent to being contacted by the team <span class="star"> * </span></label
+        >
+        <span class="error" id="checkBoxError"></span>
+      </div>
+
+      <button type="submit" value="submit">Submit</button>
+    </form>
+
+    <div id="popupModal" style="display: none">
+      <div class="modal-content">
+        <div class="modal-content-header">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="21"
+            fill="none"
+            viewBox="0 0 20 21"
+          >
+            <path
+              fill="#fff"
+              d="M14.28 7.72a.748.748 0 0 1 0 1.06l-5.25 5.25a.748.748 0 0 1-1.06 0l-2.25-2.25a.75.75 0 1 1 1.06-1.06l1.72 1.72 4.72-4.72a.75.75 0 0 1 1.06 0Zm5.47 2.78A9.75 9.75 0 1 1 10 .75a9.76 9.76 0 0 1 9.75 9.75Zm-1.5 0A8.25 8.25 0 1 0 10 18.75a8.26 8.26 0 0 0 8.25-8.25Z"
+            />
+          </svg>
+          <h3>Message Sent!</h3>
+        </div>
+        <p>Thanks for completing the form. We'll be in touch soon!</p>
+      </div>
+    </div>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="#">SRIKANTH.G</a>.
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
